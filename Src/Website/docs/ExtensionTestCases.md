@@ -3,7 +3,7 @@
 - No installs at all
   - show message to install globally or locally
 - Install globally
-  - shows for file outside solutions if solution has csharpier 
+  - shows for file outside solutions if solution has csharpier
   - should format after
   - can uninstall globally after formatting
 - Install Locally

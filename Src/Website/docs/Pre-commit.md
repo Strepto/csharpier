@@ -10,12 +10,10 @@ CSharpier can be used with a pre-commit hook to ensure that all staged files are
 [Install pre-commit via your preferred Python package manager.](https://pre-commit.com/#install)
 [Run `pre-commit install` to install the Git hook scripts.](https://pre-commit.com/#3-install-the-git-hook-scripts)
 
-
 ### [MegaLinter](https://megalinter.io/)
 
 CSharpier runs as part of
 [MegaLinter's pre-commit hooks](https://megalinter.io/latest/mega-linter-runner/#pre-commit-hook).
-
 
 ### Standalone
 
@@ -65,12 +63,14 @@ Add the following to your `.config/dotnet-tools.json`:
 ## [Husky.Net](https://github.com/alirezanet/husky.net)
 
 From the root of your repository
+
 ```bash
 dotnet tool install husky
 dotnet husky install
 ```
 
 Optionally - add this to one of your projects to automate the install for future developers
+
 ```xml
 <!-- set HUSKY to 0 in CI/CD disable this -->
 <Target Name="husky" BeforeTargets="Restore;CollectPackageReferences" Condition="'$(HUSKY)' != 0">
@@ -82,6 +82,7 @@ Optionally - add this to one of your projects to automate the install for future
 ```
 
 Modify the file at `.husky/task-runner.json`
+
 ```json
 {
     "tasks": [{
@@ -94,11 +95,13 @@ Modify the file at `.husky/task-runner.json`
 ```
 
 You can run and test your task with the following command.
+
 ```bash
 dotnet husky run
 ```
 
 Once you are sure the task is working properly, you can add it as a pre-commit hook.
+
 ```bash
 dotnet husky add pre-commit -c "dotnet husky run"
 ```

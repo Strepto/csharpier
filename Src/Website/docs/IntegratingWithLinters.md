@@ -7,7 +7,9 @@ hide_table_of_contents: true
 More often than not, linters contain formatting rules that conflict with CSharpier.
 
 ### Dotnet Format
+
 [Dotnet Format](https://github.com/dotnet/format) provides command line arguments to run different subsets of rules. Running the following will skip the whitespace formatting rules and avoid conflicts with CSharpier
+
 ```bash
 # Prior to .Net6
 dotnet-format --fix-style info --fix-analyzers info
@@ -18,16 +20,16 @@ dotnet format analyzers
 ```
 
 ### Code Analysis Rules
+
 A large number of formatting rules are all under a single rule ID IDE0055. A number of the options for it conflict with CSharpier.  
 Disabling the rule is recommended for now. See [#781](https://github.com/belav/csharpier/issues/781) for more information.
+
 ```editorconfig
 dotnet_diagnostic.IDE0055.severity = none
 ```
 
-
-
-
 ### StyleCopAnalyzers
+
 [StyleCopAnalyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers) is a set of analyzers
 that implement StyleCop rules. This is the known set of rules that conflict with CSharpier.
 
@@ -50,6 +52,7 @@ dotnet_diagnostic.SA1128.severity = none
 ```
 
 There are additional rules that can be disabled because they are not needed when using CSharpier
+
 ```editorconfig
 dotnet_diagnostic.SA1001.severity = none
 dotnet_diagnostic.SA1002.severity = none

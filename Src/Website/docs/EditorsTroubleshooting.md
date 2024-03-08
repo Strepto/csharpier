@@ -10,34 +10,43 @@ The extensions install CSharpier to a custom path to avoid commands like `dotnet
 When the extension is unable to format files, it is generally a problem with being unable to install or execute the extension. You can use the information from the logs it outputs to understand the failure and then attempt the troubleshooting steps below.
 
 ## Enabling Debug Logs
+
 ### VisualStudio
+
 - Navigate to `Tools - Options - CSharpier`
 - Change `Log Debug Messages` to `true`
 
 ### VSCode
+
 - Navigate to `File - Preferences - Settings - Extensions - CSharpier`
 - Check `Enable debug logs`
 - Restart VSCode
 
 ### Rider
+
 - Execute the action `Debug Log Settings`
 - Add an entry for `#com.intellij.csharpier.CSharpierLogger`
 - Restart Rider
 
 ## Locating Logs
+
 ### Visual Studio
+
 - Navigate to `View - Output`
 - Change the `Show output from:` dropdown to `CSharpier`
 
 ### VSCode
+
 - Navigate to `View - Output`
 - Change the dropdown to `CSharpier`
 
 ### Rider
+
 - Execute the action `Show Log in Explorer
 - Look for lines that contain `#c.i.c.CSharpierLogger`
 
 ## Troubleshooting Steps
+
 The following can help track down issues with the extension being unable to install/run CSharpier
 
 1. Validate the following command can run in the directory of your project<br/>
